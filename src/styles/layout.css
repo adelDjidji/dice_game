@@ -1,0 +1,57 @@
+.player-zone button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.player-zone {
+  width: 30vw;
+  border: solid 1px #80808070;
+  padding: 2em 1em;
+}
+
+.player-zone.active .status {
+  background-color: #e91e63;
+}
+.player-zone.active .score{
+    width: 100px;
+      height: 100px;
+      margin: 1em auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 23pt;
+      color: white;
+      background: #e91e63;
+      border-radius: 50%;
+      border: none;
+  }
+  .score{
+    width: 100px;
+    height: 100px;
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23pt;
+    color: gray;
+    background: white;
+    border: solid 2px gray;
+    border-radius: 50%;
+  }
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  } 
+  .score-plus{
+    animation: fadeIn 1s;
+    width: 30px;
+    height: 30px;
+    margin: 0em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+    color: white;
+    background: #e91e63;
+    border-radius: 50%;
+    transition: all ease .3s;
+  }

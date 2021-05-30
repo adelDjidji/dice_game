@@ -1,5 +1,6 @@
 import React from 'react';
 
+import "../styles/dice.css"
 export default function Dice({ value = 1 }) {
     if (value === 1)
         return <div className="dice-container">
@@ -43,6 +44,3 @@ export default function Dice({ value = 1 }) {
         </div>
     else return <div className="dice-container"></div>
 };
-Dice.randomise= function(){
-       
-}

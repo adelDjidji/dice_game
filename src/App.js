@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './App.css';
+import './styles/App.css';
 import SettingsPanel from "./components/SettingsPanel"
 import GameLayout from "./components/GameLayout"
 function App() {

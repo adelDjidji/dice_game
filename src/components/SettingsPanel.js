@@ -11,9 +11,8 @@ const Error = styled.p`
 color:red;
 `
 
-const MIN_MAXSCORE = 10
+const MIN_MAXSCORE = 7
 export default function SettingsPanel() {
-    const game = useSelector(state => state.game)
     const [playersnames,setplayersnames] = useState(["Player 1","Player 2"]);
     const [error,setError] = useState("");
     const [maxscore,setmaxscore] = useState();
@@ -28,7 +27,7 @@ export default function SettingsPanel() {
     const handleSubmit = () => {
         if (!!playersnames[0] && playersnames[0]?.trim !== "" && !!playersnames[1] && playersnames[1]?.trim !== "")
             if (!maxscore || maxscore < MIN_MAXSCORE) {
-                setError("Max Score must be greather than or equal to "+MIN_MAXSCORE)
+                setError("Max Score must be greather than or equal to " + MIN_MAXSCORE)
                 return
             }
         dispatch(saveSettings({
@@ -38,24 +37,29 @@ export default function SettingsPanel() {
         }))
     }
     return <div>
+        
+        <div className="settings-container">
         <h2><b>Game settings</b></h2>
-        <hr />
-        {
-            Array.isArray(playersnames) && playersnames.map((player,index) => <><Flex>
-                <b>Players {index + 1}</b>
-                <input type="text" onChange={(e) => {
-                    handleChangeNames(e.target.value,index)
-                }} placeholder={`plyayer ${index + 1}`} value={player} />
-            </Flex><br /></>)
-        }
-        <Flex>
-            <b>max score</b>
-            <input type="number" min="0" onChange={(e) => {
-                setmaxscore(e.target.value)
-            }} placeholder="max score" value={maxscore} />
-        </Flex>
-        <Error>{error}</Error>
+        {/* <hr /> */}
+            {
+                Array.isArray(playersnames) && playersnames.map((player,index) => <><Flex>
+                    <b>Player {index + 1}</b>
+                    <input type="text" onChange={(e) => {
+                        handleChangeNames(e.target.value,index)
+                    }} placeholder={`plyayer ${index + 1}`} value={player} />
+                </Flex><br /></>)
+            }
+            <Flex>
+                <b>Max score</b>
+                <input type="number" min="0" onChange={(e) => {
+                    setmaxscore(e.target.value)
+                }} placeholder="max score" value={maxscore} />
+            </Flex>
+            <Error>{error}</Error>
 
-        <button onClick={handleSubmit}>Submit</button>
+            <button className="primary" onClick={handleSubmit}>Submit</button>
+        </div>
+
+
     </div>
 };

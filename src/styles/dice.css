@@ -1,0 +1,42 @@
+.full-w{
+    width: 100%;
+  }
+  .mid-w{
+    width: 50%;
+  }
+  .dot{
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+    display: block;
+    /* margin: auto; */
+  }
+  .dot.hidden{
+    opacity: 0;
+  }
+  .dot-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dot-container.end{
+    justify-content: flex-end;
+    padding: 0px 6px;
+  }
+  .dot-container.start{
+    justify-content: flex-start;
+    padding: 0px 6px;
+  }
+  .dice-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 3pt;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px grey;
+    margin: auto;
+      position: relative;
+      top: 147px;
+      background: white;
+  }
